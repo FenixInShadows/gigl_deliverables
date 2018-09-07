@@ -1,0 +1,50 @@
+**/*.midi
+
+**/*.pp_out.c
+**/*.gen_cpp
+**/*.html
+**/*.xml
+**/*.i
+
+**/build/**/*
+
+# Compiled Object files
+**/*.slo
+**/*.lo
+**/*.o
+**/*.obj
+
+# Precompiled Headers
+**/*.gch
+**/*.pch
+
+# Compiled Dynamic libraries
+**/*.so
+**/*.dylib
+**/*.dll
+
+# Compiled Static libraries
+**/*.lai
+**/*.la
+**/*.a
+**/*.lib
+
+# Executables
+**/*.exe
+**/*.out
+**/*.app
+**/*.ipa
+
+# Vim Artifacts
+**/*.swp
+**/*.swo
+**/.ctrlp_cache/*
+
+
+**/*.pdb
+**/*.suo
+**/*.sdf
+**/Debug/*
+**/Release/*
+
+**/*.opendb

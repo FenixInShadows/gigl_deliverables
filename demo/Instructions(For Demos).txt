@@ -1,0 +1,46 @@
+This document contains instructions for using GIGL with demo setup. A better version of this instruction is available on the project website. New users are encouraged to go through the demos in order, and before trying some of the Exercises. The instruction here is almost the same as those for Exercises, except that the GIGL source files here are already complete and ready to compile.
+
+
+Basics
+
+	1. Make sure JRE (Java Runtime Environment) is installed.
+
+	2. Do not change the name and relative location of files and directories, unless you are confident to modify the scripts and setups to accommodate those
+
+	3. Currently there are five demo projects available:
+		
+		Hello World: An example of entry level GIGL programming, which is a simple probabilistic text generation.
+
+		Monster: An example of generating dungeon monsters with very simple attributes, with slightly more complicated grammatical structure than the Hello World example.
+
+		Quiz: An example of generating arithmetic quizzes. This introduces some advanced usage of generator configuration, including lambda expressions for setting configure parameters.
+
+		LSystem Tree: An example of generating trees based on an L-system grammar. This introduces maybe-semantics and dynamic specifier for configure parameters etc. The visualization needs OpenGL and SDL libraries.
+
+		BSP Dungeon: An example of generating dungeon levels (maps). This introduces pre-selectors, forbid statements etc, and exploiting hierarchies built-in in the GIGL framework. The visualization needs OpenGL and SDL libraries.
+
+
+Windows Specific Instructions (Visual Studio)
+
+	1. Visual Studio 2015 (the version number is 14) is what the projects are setup with, so the full pipeline should directly work in there. Other versions of Visual Studio may or may not work (not tested). In case it is necessary to do each step (translate and ) separately a full setup of the pipeline, please refer to the instructions at [Here].
+
+	2. Doing a "re-build" in Visual Studio will always do the GIGL-C++ translation component before the final compilation, doing a "build" will check the timestamps and only do so when necessary.
+
+	3. In case some error occurs with messages like "Command CL is not found", try the following. Set up the path and environment variables for Visual Studio by starting "Developer Command Prompt for VSXXXX" (XXXX is the version of Visual Studio; this step can alternatively be changing the directory to the Visual Studio installation directory by normally starting "cmd"), then enter the command "vcvarsall x86" (or "vcvarsall x86_amd64" if the target platform is x64).
+
+	4. For projects requirements of extra libraries (OpenGL, SDL): 
+		
+		Each Visual Studio project setting (x64 vs x86) may require the libraries installed in a different place. So please make sure either you select the proper setting, or you have libraries installed for all settings. When encountering library related issue, first try to switch between x64 and x86 to see if one of them can work.
+		
+		For running the program, it is recommended to first try running from Visual Studio, as running the compiled executable might have issues finding some dll etc.
+
+		The header files of the libraries must be as SDL2/SDL.h and SDL2/SDL_opengl.h (in some include directory of the project). The default include directory includes the include folder at where Visual Studio is stalled, and the directory where the source file of the specific project lies.
+
+
+Unix Specific Instructions (g++)
+
+	1. Make sure g++, gcc and make are available.
+
+	2. In the Makefile, the target "translate" will only do the translation, "compile" do the compilation which needs the translation to be done first, "all" or the default target will do the two steps in sequence, and "clean" will do the clean up.
+
+	3. Projects requiring extra libraries (OpenGL, SDL) are not fully tested in Unix environment. Please expect difficulties in making those libraries work, and certain versions of library may not work.

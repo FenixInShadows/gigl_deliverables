@@ -1,0 +1,40 @@
+This document contains instructions for using GIGL with exercise setup. A better version of this instruction is available on the project website. New users are encouraged to go through the exercises in order, and after trying some of the Demos. The instruction here is almost the same as those for Demos, except that the GIGL source files here are initially setup to be almost empty which needs to be filled in properly before it could compile.
+
+
+Basics
+
+	1. Make sure JRE (Java Runtime Environment) is installed.
+
+	2. Do not change the names and relative locations of files and directories, unless you are confident to modify the scripts and setups to accommodate those.
+
+	3. The GIGL source file, i.e. the .xc file in each project is the only file that needs to be edited. Do not modify other files unless you are confident to do so.
+
+	4. Currently the system only does syntax checking on GIGL source code. Syntax error messages will be reported in the .generated.h file, it will contain the error messages instead of the translated code as it normally would.
+ 
+	5. Type checking is not done on GIGL source code, and is deferred to C++ compiler which checks the translated code (.generated.h file). Which means the type error messages would be about the translated code rather than the GIGL source code (which is not ideal of course).
+
+	6. Follow the instruction of each project and what the comments in the provided GIGL source files hints. Particularly, avoid changing the name of the item type, the name and signature of the interfacing function, the required name of attributes, unless you are confident that you can modify other source files (e.g. main.cpp) to accommodate those.
+
+	7. The solutions are provided in the "solution" folder.
+
+	8. Currently there are two exercise projects available:
+		
+		Good Morning: A slightly more complex (still very simple) text generation than the Hello World demo. Recommended after completing the Hello World and Monster demos.
+
+		Fancy Monster: A more complicated setup than the monster example. Recommended after completing Good Morning exercise.
+
+
+Windows Specific Instructions (Visual Studio)
+
+	1. Visual Studio 2015 (the version number is 14) is what the projects are setup with, so the full pipeline should directly work in there. Other versions of Visual Studio may or may not work (not tested). In case it is necessary to do each step (translate and ) separately a full setup of the pipeline, please refer to the instructions at [Here].
+
+	2. Doing a "re-build" in Visual Studio will always do the GIGL-C++ translation component before the final compilation, doing a "build" will check the timestamps and only do so when necessary.
+
+	3. In case some error occurs with messages like "Command CL is not found", try the following. Set up the path and environment variables for Visual Studio by starting "Developer Command Prompt for VSXXXX" (XXXX is the version of Visual Studio; this step can alternatively be changing the directory to the Visual Studio installation directory by normally starting "cmd"), then enter the command "vcvarsall x86" (or "vcvarsall x86_amd64" if the target platform is x64).
+
+
+Unix Specific Instructions (g++)
+
+	1. Make sure g++, gcc and make are available.
+
+	2. In the Makefile, the target "translate" will only do the translation, "compile" do the compilation which needs the translation to be done first, "all" or the default target will do the two steps in sequence, and "clean" will do the clean up.

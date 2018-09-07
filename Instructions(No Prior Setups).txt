@@ -1,0 +1,38 @@
+This document contains instructions for using GIGL without assuming any prior setup. A better version of this instruction is available on the project website. If some project is already setup with GIGL, some of the steps may be skipped, such as those for Demos and Exercises. For Demos and Exercises, lease look at the instructions at those pages or the instructions in the demo and exercise sub-folders directly.
+
+
+Basics
+
+	1. The "ableC.jar" is the GIGL-C++ translator executable. The "include" folder contains the GIGL auxiliary library sources (however, be clear that GIGL is not a library but a DSL).
+
+	2. Make sure JRE (Java Runtime Environment) is installed. The translator needs it to execute. The deliverables also come along with demos and exercises in the folders with the corresponding names. If already familiar with GIGL and do not want demos and exercises those two folders maybe ignored or removed.
+
+	3. The command to execute the translator, i.e. translating source code in GIGL to C++, is "java -Xss6M -jar <translator executable> <GIGL source file> --skip-cpp --show-lifted-pp > <output translated file>" for Windows, and "java -Xss6M -jar <translator executable> <GIGL source file> --show-lifted-pp > <output translated file>" for Unix (without the --skip-cpp option). The difference is because of the artifact that pre-processing is by default built-in in the system but uses some command that are specific to Unix, which are hard to work in Windows (this may be changed later). Therefore, for the Windows version, when directly using the translator, please make sure the source file is already pre-processed or it does not contain something that needs to be preprocessed, such as macros. Other artifacts that may need attention can be found in the documentation about GIGL syntax.
+
+	4. Currently the translator only detects syntax error, but not type errors in the GIGL source file (those will be discovered by C++ compiler when attempting to compile the translated code, which is less ideal).
+
+	5. When compiling the translated code (provided some C++ compiler is available), make sure to have the GIGL auxiliary library added into the include path.
+
+	6. For convenience, setting up a pipeline that sequences the GIGL-C++ translator and a C++ compiler is often the practice. This effectively make the system a GIGL compiler. See below for more instructions (the Demos and Exercises are already setup up with those which could serve as examples for setting put pipelines).
+
+
+Setting up the Pipeline for Windows (Visual Studio)
+
+	1. Create a batch file containing a sequence of two commands. 
+
+		The first command is "CL /P /EP <GIGL source file>", which calls the C++ preprocessor in Visual Studio. This means the input to this pipeline does not have to be preprocessed (as opposed to #3 above), though other constraints on what can be in GIGL source file may still apply. The output of the first command, i.e. the preprocessed file name is by default sharing the main part of the input source file but with the extension to be ".i".
+
+		The second command is "java -Xss6M -jar <translator executable> <preprocessed GIGL file> --skip-cpp --show-lifted-pp > <output translated file>", which executes the translator. This is mostly the same as #3 above but we are inputting the preprocessed GIGL source file explicitly. 
+
+	2. Add the GIGL source file to the Visual Studio project.
+
+	3. In Visual Studio, right click the GIGL source file in the solution explorer, and select "Properties". In the "Item Type" entry under "General" tab, select "Custom Build Tool", then click apply to refresh. In the "Custom Build Tool" tab, enter "call <the batch file from #1>" in the "Command Line" entry, enter the expected name of the translated file in the "Output" entry, and select "No" in the "Link Object" entry. This will allow the build processes in Visual Studio to first call the batch file to translate the GIGL source before doing C++ compilation (doing a re-build will always call the batch file, but a simple build will check the timestamps and only do it when necessary).
+ 
+	4. In case some error occurs with messages like "Command CL is not found", try the following. Set up the path and environment variables for Visual Studio by starting "Developer Command Prompt for VSXXXX" (XXXX is the version of Visual Studio; this step can alternatively be changing the directory to the Visual Studio installation directory by normally starting "cmd"), then enter the command "vcvarsall x86" (or "vcvarsall x86_amd64" if the target platform is x64).
+
+
+Setting up the Pipeline for Unix (g++)
+
+	1. In addition to g++, gcc is also required (which is often the case) for built-in preprocessing (this may be changed later).
+
+	2. Make the pipeline by making a make file (or use cmake) listing the translating command, compiling command etc. appropriately.
