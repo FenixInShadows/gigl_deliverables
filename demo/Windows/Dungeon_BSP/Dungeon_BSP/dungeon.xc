@@ -25,11 +25,11 @@ wrapper:
 node:
 	Range2D bound_box;
 	Range2D room_range;
-	double GetContactFromLeft(double y); // get the x coordinate of the contact point if a horizontal ray comes from the left, with the use of the spatial data structure
-	double GetContactFromBottom(double x); // get the y coordinate of the contact point if a vertical ray comes from the bottom, with the use of the spatial data structure
-	double GetContactFromRight(double y); // get the x coordinate of the contact point if a horizontal ray comes from the right, with the use of the spatial data structure
-	double GetContactFromTop(double x); // get the y coordinate of the contact point if a vertical ray comes from the bottom, with the use of the spatial data structure
-	void Draw(bool is_padded) // with the use of the spatial data structure for view-culling
+	double GetContactFromLeft(double y);
+	double GetContactFromBottom(double x);
+	double GetContactFromRight(double y);
+	double GetContactFromTop(double x);
+	void Draw(bool is_padded)
 	{
 		switch (CheckDraw2D(bound_box, window_range))
 		{
@@ -38,8 +38,8 @@ node:
 			case DRAW_ALL: DrawAll(is_padded); break;
 		}
 	}
-	void DrawPart(bool is_padded); // do recursive view-culling checking
-	void DrawAll(bool is_padded); // no recursive view-culling checking, draw all subareas
+	void DrawPart(bool is_padded);
+	void DrawAll(bool is_padded);
 
 nonterminal:
 	DungeonArea(const Range2D& range, const Range1D& cover_x, const Range1D& cover_y, bool have_boss);
@@ -67,11 +67,10 @@ rule:
 			}
 		}
 	:=
-	| hDivide{double corrid_min, double corrid_max}: DungeonArea* b_area, DungeonArea* t_area, Corridor* corridor // divide current area horizontally
+	| hDivide{double corrid_min, double corrid_max}: DungeonArea* b_area, DungeonArea* t_area, Corridor* corridor
 		{
 			generator
 			{
-				// generate the subareas
 				double corrid_size = GetRandFloat(corrid_min, corrid_max);
 				double corrid_pos = GetRandFloat(range.left + wall_min, range.right - wall_min - corrid_size);
 				Range1D corrid_cover = MkRange1DFromMin(corrid_pos, corrid_size);
@@ -94,7 +93,7 @@ rule:
 					b_area = generate DungeonArea(MkRange2D(range.left, range.bottom, range.right, separator_y), corrid_cover, MkMinConstraintRange1D(cover_y.min), boss_in_bottom);
 					t_area = generate DungeonArea(MkRange2D(range.left, separator_y, range.right, range.top), union_cover, MkMaxConstraintRange1D(cover_y.max), boss_in_top);
 				}
-				// generate the corridor
+
 				double corrid_bottom_left = b_area->GetContactFromTop(corrid_cover.min);
 				double corrid_bottom_right = b_area->GetContactFromTop(corrid_cover.max);
 				double corrid_bottom = (corrid_bottom_left < corrid_bottom_right ? corrid_bottom_left : corrid_bottom_right);
@@ -148,11 +147,10 @@ rule:
 				corridor->Draw(is_padded);
 			}
 		}
-	| vDivide{double corrid_min, double corrid_max}: DungeonArea* l_area, DungeonArea* r_area, Corridor* corridor // divide the current area vertically
+	| vDivide{double corrid_min, double corrid_max}: DungeonArea* l_area, DungeonArea* r_area, Corridor* corridor
 		{
 			generator
 			{
-				// generate the subareas
 				double corrid_size = GetRandFloat(corrid_min, corrid_max);
 				double corrid_pos = GetRandFloat(range.bottom + wall_min, range.top - wall_min - corrid_size);
 				Range1D corrid_cover = MkRange1DFromMin(corrid_pos, corrid_size);
@@ -175,7 +173,7 @@ rule:
 					l_area = generate DungeonArea(MkRange2D(range.left, range.bottom, separator_x, range.top), MkMinConstraintRange1D(cover_x.min), corrid_cover, boss_in_left);
 					r_area = generate DungeonArea(MkRange2D(separator_x, range.bottom, range.right, range.top), MkMaxConstraintRange1D(cover_x.max), union_cover, boss_in_right);
 				}
-				// generate the corridor
+
 				double corrid_left_bottom = l_area->GetContactFromRight(corrid_cover.min);
 				double corrid_left_top = l_area->GetContactFromRight(corrid_cover.max);
 				double corrid_left = (corrid_left_bottom < corrid_left_top ? corrid_left_bottom : corrid_left_top);
@@ -229,7 +227,7 @@ rule:
 				corridor->Draw(is_padded);
 			}
 		}
-	| tArea{double room_min}: Room* room // normal termination area, containing one regular room
+	| tArea{double room_min}: Room* room
 		{
 			generator
 			{
@@ -243,7 +241,7 @@ rule:
 			DrawPart = room->Draw(is_padded);
 			DrawAll = room->Draw(is_padded);
 		}
-	| bossArea{double room_min}: BossRoom* room // special termination area, containing one boss room
+	| bossArea{double room_min}: BossRoom* room
 		{
 			generator
 			{
@@ -259,12 +257,12 @@ rule:
 		}
 };
 
-BspDungeon* GenerateDungeon(const Range2D& whole_range, double unit_min, double unit_max, double wall_min, double have_boss_area)
+BspDungeon* GenerateDungeon(const Range2D& whole_range, double unit_min, double unit_max, double wall_min, bool have_boss_area)
 {
 	return generate BspDungeon with <* BspDungeon{whole_range, unit_min, unit_max, wall_min, have_boss_area}:
 		DungeonArea :=
-		| hDivide{0.1 * unit_min, 0.2 * unit_min} @ {0.3}
-		| vDivide{0.1 * unit_min, 0.2 * unit_min} @ {0.3}
-		| tArea{0.7 * range.GetMinSpan()} @ {0.4}
-		| bossArea{0.7 * range.GetMinSpan()} *>;
+			| hDivide{0.1 * unit_min, 0.2 * unit_min} @ {0.3}
+			| vDivide{0.1 * unit_min, 0.2 * unit_min} @ {0.3}
+			| tArea{0.7 * range.GetMinSpan()} @ {0.4}
+			| bossArea{0.7 * range.GetMinSpan()} *>;
 }

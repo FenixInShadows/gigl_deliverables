@@ -100,16 +100,16 @@ int main(int argc, char *argv[])
 	cin >> seed;
 	
 
-	int total_size;
+	double total_size;
 	cout << "Input the size of the dungeon (side-length of a square)" << endl;
 	cin >> total_size;
 	Range2D total_range(0.0, 0.0, total_size, total_size, total_size, total_size);
 
-	int unit_min, unit_max;
+	double unit_min, unit_max;
 	cout << "Input the minimum and maximum unit area size, separated by whitespaces; the max should be bigger than twice of the min" << endl;
 	cin >> unit_min >> unit_max;
 
-	int wall_min;
+	double wall_min;
 	cout << "Input the minimum of for the size of the wall from a room to the edge of a unit space" << endl;
 	cin >> wall_min;
 

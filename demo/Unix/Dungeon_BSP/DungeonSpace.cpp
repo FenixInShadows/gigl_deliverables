@@ -188,11 +188,11 @@ void Room::Draw(bool is_padded) const
 	{
 		double padding = 5.0; // hard-coded, the wall_min is better set to be no smaller than this
 		Range2D modified_range(range.left - padding, range.bottom - padding, range.right + padding, range.top + padding);
-		modified_range.DrawRect(0.2, 0.2, 0.2);
+		modified_range.DrawRect(0.2f, 0.2f, 0.2f);
 	}
 	else
 	{
-		range.DrawRect(0.8, 0.6, 0.4);
+		range.DrawRect(0.8f, 0.6f, 0.4f);
 	}
 }
 
@@ -225,11 +225,11 @@ void BossRoom::Draw(bool is_padded) const
 	{
 		double padding = 5.0; // hard-coded, the wall_min is better set to be no smaller than this
 		Range2D modified_range(range.left - padding, range.bottom - padding, range.right + padding, range.top + padding);
-		modified_range.DrawRect(0.2, 0.2, 0.2);
+		modified_range.DrawRect(0.2f, 0.2f, 0.2f);
 	}
 	else
 	{
-		range.DrawRect(0.9, 0.1, 0.1);
+		range.DrawRect(0.9f, 0.1f, 0.1f);
 	}
 }
 
@@ -262,11 +262,11 @@ void Corridor::Draw(bool is_padded) const
 	{
 		double padding = 5.0; // hard-coded, the wall_min is better set to be no smaller than this
 		Range2D modified_range(range.left - padding, range.bottom - padding, range.right + padding, range.top + padding);
-		modified_range.DrawRect(0.2, 0.2, 0.2);
+		modified_range.DrawRect(0.2f, 0.2f, 0.2f);
 	}
 	else
 	{
-		range.DrawRect(0.8, 0.8, 0.0);
+		range.DrawRect(0.8f, 0.8f, 0.0f);
 	}
 }
 

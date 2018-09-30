@@ -949,102 +949,102 @@ void BspDungeon__bossArea::DrawAll(signed int  is_padded)
 
 
 
-const Range2D  &BspDungeon__ConfigLambda__265__54(const GiglConfig  & config);
-double BspDungeon__ConfigLambda__265__67(const GiglConfig  & config);
-double BspDungeon__ConfigLambda__265__77(const GiglConfig  & config);
-double BspDungeon__ConfigLambda__265__87(const GiglConfig  & config);
-signed int BspDungeon__ConfigLambda__265__97(const GiglConfig  & config);
-double BspDungeon__ConfigLambda__267__26(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss);
-double BspDungeon__ConfigLambda__267__42(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss);
+const Range2D  &BspDungeon__ConfigLambda__263__54(const GiglConfig  & config);
+double BspDungeon__ConfigLambda__263__67(const GiglConfig  & config);
+double BspDungeon__ConfigLambda__263__77(const GiglConfig  & config);
+double BspDungeon__ConfigLambda__263__87(const GiglConfig  & config);
+signed int BspDungeon__ConfigLambda__263__97(const GiglConfig  & config);
+double BspDungeon__ConfigLambda__265__34(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss);
+double BspDungeon__ConfigLambda__265__50(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss);
+double BspDungeon__ConfigLambda__265__69(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss);
+double BspDungeon__ConfigLambda__266__34(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss);
+double BspDungeon__ConfigLambda__266__50(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss);
+double BspDungeon__ConfigLambda__266__69(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss);
+double BspDungeon__ConfigLambda__267__32(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss);
 double BspDungeon__ConfigLambda__267__61(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss);
-double BspDungeon__ConfigLambda__268__26(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss);
-double BspDungeon__ConfigLambda__268__42(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss);
-double BspDungeon__ConfigLambda__268__61(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss);
-double BspDungeon__ConfigLambda__269__24(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss);
-double BspDungeon__ConfigLambda__269__53(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss);
-double BspDungeon__ConfigLambda__270__27(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss);
-double BspDungeon__ConfigLambda__270__52(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss);
-const Range2D  &BspDungeon__ConfigLambda__265__54(const GiglConfig  & config)
+double BspDungeon__ConfigLambda__268__35(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss);
+double BspDungeon__ConfigLambda__268__60(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss);
+const Range2D  &BspDungeon__ConfigLambda__263__54(const GiglConfig  & config)
 {
 
   return (*(*((const Range2D * *)(((config).vars)[0]))));
 }
-double BspDungeon__ConfigLambda__265__67(const GiglConfig  & config)
+double BspDungeon__ConfigLambda__263__67(const GiglConfig  & config)
 {
 
   return (*(*((double * *)(((config).vars)[1]))));
 }
-double BspDungeon__ConfigLambda__265__77(const GiglConfig  & config)
+double BspDungeon__ConfigLambda__263__77(const GiglConfig  & config)
 {
 
   return (*(*((double * *)(((config).vars)[2]))));
 }
-double BspDungeon__ConfigLambda__265__87(const GiglConfig  & config)
+double BspDungeon__ConfigLambda__263__87(const GiglConfig  & config)
 {
 
   return (*(*((double * *)(((config).vars)[3]))));
 }
-signed int BspDungeon__ConfigLambda__265__97(const GiglConfig  & config)
+signed int BspDungeon__ConfigLambda__263__97(const GiglConfig  & config)
 {
 
-  return (*(*((double * *)(((config).vars)[4]))));
+  return (*(*((signed int * *)(((config).vars)[4]))));
 }
-double BspDungeon__ConfigLambda__267__26(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss)
+double BspDungeon__ConfigLambda__265__34(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss)
 {
 
   return (0.1 * (*(*((double * *)(((config).vars)[5])))));
 }
-double BspDungeon__ConfigLambda__267__42(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss)
+double BspDungeon__ConfigLambda__265__50(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss)
 {
 
   return (0.2 * (*(*((double * *)(((config).vars)[6])))));
 }
-double BspDungeon__ConfigLambda__267__61(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss)
+double BspDungeon__ConfigLambda__265__69(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss)
 {
 
   return 0.3;
 }
-double BspDungeon__ConfigLambda__268__26(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss)
+double BspDungeon__ConfigLambda__266__34(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss)
 {
 
   return (0.1 * (*(*((double * *)(((config).vars)[7])))));
 }
-double BspDungeon__ConfigLambda__268__42(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss)
+double BspDungeon__ConfigLambda__266__50(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss)
 {
 
   return (0.2 * (*(*((double * *)(((config).vars)[8])))));
 }
-double BspDungeon__ConfigLambda__268__61(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss)
+double BspDungeon__ConfigLambda__266__69(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss)
 {
 
   return 0.3;
 }
-double BspDungeon__ConfigLambda__269__24(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss)
+double BspDungeon__ConfigLambda__267__32(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss)
 {
 
   return (0.7 * (((range).GetMinSpan)()));
 }
-double BspDungeon__ConfigLambda__269__53(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss)
+double BspDungeon__ConfigLambda__267__61(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss)
 {
 
   return 0.4;
 }
-double BspDungeon__ConfigLambda__270__27(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss)
+double BspDungeon__ConfigLambda__268__35(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss)
 {
 
   return (0.7 * (((range).GetMinSpan)()));
 }
-double BspDungeon__ConfigLambda__270__52(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss)
+double BspDungeon__ConfigLambda__268__60(const GiglConfig  & config, const Range2D  & range, const Range1D  & cover_x, const Range1D  & cover_y, signed int  have_boss)
 {
 
   return (1.0 - (0.3 + (0.3 + 0.4)));
 }
 
-BspDungeon  *GenerateDungeon(const Range2D  & whole_range, double  unit_min, double  unit_max, double  wall_min, double  have_boss_area)
+BspDungeon  *GenerateDungeon(const Range2D  & whole_range, double  unit_min, double  unit_max, double  wall_min, signed int  have_boss_area)
 {
 
   {
-    return (new BspDungeon((GiglConfig(9, 15, ((sizeof(const Range2D *)) + ((sizeof(double *)) + ((sizeof(double *)) + ((sizeof(double *)) + ((sizeof(double *)) + ((sizeof(double *)) + ((sizeof(double *)) + ((sizeof(double *)) + (sizeof(double *)))))))))), (SizeVec{(sizeof(const Range2D *)), (sizeof(double *)), (sizeof(double *)), (sizeof(double *)), (sizeof(double *)), (sizeof(double *)), (sizeof(double *)), (sizeof(double *)), (sizeof(double *))}), (VarPtrVec{((VarPtr)(&((*((const Range2D * *)((malloc)((sizeof(const Range2D *)))))) = (&(whole_range))))), ((VarPtr)(&((*((double * *)((malloc)((sizeof(double *)))))) = (&(unit_min))))), ((VarPtr)(&((*((double * *)((malloc)((sizeof(double *)))))) = (&(unit_max))))), ((VarPtr)(&((*((double * *)((malloc)((sizeof(double *)))))) = (&(wall_min))))), ((VarPtr)(&((*((double * *)((malloc)((sizeof(double *)))))) = (&(have_boss_area))))), ((VarPtr)(&((*((double * *)((malloc)((sizeof(double *)))))) = (&(unit_min))))), ((VarPtr)(&((*((double * *)((malloc)((sizeof(double *)))))) = (&(unit_min))))), ((VarPtr)(&((*((double * *)((malloc)((sizeof(double *)))))) = (&(unit_min))))), ((VarPtr)(&((*((double * *)((malloc)((sizeof(double *)))))) = (&(unit_min)))))}), (IndexVec{0, 1, 2, 3, 4, 9, 10, 5, 11, 12, 6, 13, 7, 14, 8}), (FuncPtrVec{((FuncPtr)(&(BspDungeon__ConfigLambda__265__54))), ((FuncPtr)(&(BspDungeon__ConfigLambda__265__67))), ((FuncPtr)(&(BspDungeon__ConfigLambda__265__77))), ((FuncPtr)(&(BspDungeon__ConfigLambda__265__87))), ((FuncPtr)(&(BspDungeon__ConfigLambda__265__97))), ((FuncPtr)(&(BspDungeon__ConfigLambda__267__26))), ((FuncPtr)(&(BspDungeon__ConfigLambda__267__42))), ((FuncPtr)(&(BspDungeon__ConfigLambda__267__61))), ((FuncPtr)(&(BspDungeon__ConfigLambda__268__26))), ((FuncPtr)(&(BspDungeon__ConfigLambda__268__42))), ((FuncPtr)(&(BspDungeon__ConfigLambda__268__61))), ((FuncPtr)(&(BspDungeon__ConfigLambda__269__24))), ((FuncPtr)(&(BspDungeon__ConfigLambda__269__53))), ((FuncPtr)(&(BspDungeon__ConfigLambda__270__27))), ((FuncPtr)(&(BspDungeon__ConfigLambda__270__52)))})))));
+    return (new BspDungeon((GiglConfig(9, 15, ((sizeof(const Range2D *)) + ((sizeof(double *)) + ((sizeof(double *)) + ((sizeof(double *)) + ((sizeof(signed int *)) + ((sizeof(double *)) + ((sizeof(double *)) + ((sizeof(double *)) + (sizeof(double *)))))))))), (SizeVec{(sizeof(const Range2D *)), (sizeof(double *)), (sizeof(double *)), (sizeof(double *)), (sizeof(signed int *)), (sizeof(double *)), (sizeof(double *)), (sizeof(double *)), (sizeof(double *))}), (VarPtrVec{((VarPtr)(&((*((const Range2D * *)((malloc)((sizeof(const Range2D *)))))) = (&(whole_range))))), ((VarPtr)(&((*((double * *)((malloc)((sizeof(double *)))))) = (&(unit_min))))), ((VarPtr)(&((*((double * *)((malloc)((sizeof(double *)))))) = (&(unit_max))))), ((VarPtr)(&((*((double * *)((malloc)((sizeof(double *)))))) = (&(wall_min))))), ((VarPtr)(&((*((signed int * *)((malloc)((sizeof(signed int *)))))) = (&(have_boss_area))))), ((VarPtr)(&((*((double * *)((malloc)((sizeof(double *)))))) = (&(unit_min))))), ((VarPtr)(&((*((double * *)((malloc)((sizeof(double *)))))) = (&(unit_min))))), ((VarPtr)(&((*((double * *)((malloc)((sizeof(double *)))))) = (&(unit_min))))), ((VarPtr)(&((*((double * *)((malloc)((sizeof(double *)))))) = (&(unit_min)))))}), (IndexVec{0, 1, 2, 3, 4, 9, 10, 5, 11, 12, 6, 13, 7, 14, 8}), (FuncPtrVec{((FuncPtr)(&(BspDungeon__ConfigLambda__263__54))), ((FuncPtr)(&(BspDungeon__ConfigLambda__263__67))), ((FuncPtr)(&(BspDungeon__ConfigLambda__263__77))), ((FuncPtr)(&(BspDungeon__ConfigLambda__263__87))), ((FuncPtr)(&(BspDungeon__ConfigLambda__263__97))), ((FuncPtr)(&(BspDungeon__ConfigLambda__265__34))), ((FuncPtr)(&(BspDungeon__ConfigLambda__265__50))), ((FuncPtr)(&(BspDungeon__ConfigLambda__265__69))), ((FuncPtr)(&(BspDungeon__ConfigLambda__266__34))), ((FuncPtr)(&(BspDungeon__ConfigLambda__266__50))), ((FuncPtr)(&(BspDungeon__ConfigLambda__266__69))), ((FuncPtr)(&(BspDungeon__ConfigLambda__267__32))), ((FuncPtr)(&(BspDungeon__ConfigLambda__267__61))), ((FuncPtr)(&(BspDungeon__ConfigLambda__268__35))), ((FuncPtr)(&(BspDungeon__ConfigLambda__268__60)))})))));
   }
 }
 

@@ -105,7 +105,7 @@ int main(int argc, char *argv[])
 	cout << "Input the expansion depth n" << endl;
 	cin >> n;
 
-	int unit_len;
+	double unit_len;
 	cout << "Input the unit segment length" << endl;
 	cin >> unit_len;
 
