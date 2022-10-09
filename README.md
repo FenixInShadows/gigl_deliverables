@@ -24,4 +24,4 @@ The following is an overview of the content.
   - The instructions for demos: the txt in the demo directory or https://sites.google.com/a/umn.edu/grammatical-item-generation-language/demos
   - The instructions for exercises: the txt in the exercise directory or https://sites.google.com/a/umn.edu/grammatical-item-generation-language/exercises
 
-* Please note: the way the dependencies are organized in the Makefiles is not ideal.
+* Side note: the way the dependencies are organized in the Makefiles is not ideal.
