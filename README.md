@@ -20,6 +20,6 @@ The following is an overview of the content.
   - FancyMonster: A more complicated monster generation than the Monster demo.
   
 - The instructions can be found in the text documents or, as a better version, on the project website.
-  - The instructions for custom use without prior setup: the txt in the root directory of the repo or https://sites.google.com/a/umn.edu/grammatical-item-generation-language/instructions
+  - The instructions for custom use without prior setup: the txt in the root directory of the repo or https://sites.google.com/a/umn.edu/grammatical-item-generation-language/downloads-and-instructions
   - The instructions for demos: the txt in the demo directory or https://sites.google.com/a/umn.edu/grammatical-item-generation-language/demos
   - The instructions for exercises: the txt in the exercise directory or https://sites.google.com/a/umn.edu/grammatical-item-generation-language/walk-trough-practices
