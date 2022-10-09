@@ -14,6 +14,8 @@ public:
 	void operator = (const GiglConfig& config); // copy operator
 	void operator = (GiglConfig&& config); // move operator
 	~GiglConfig();
+	bool IsEmpty() const; // whether there's no actual config (full constructed, using "noconfig" version of item constructor)
+
 private:
 	void Destruct();
 	unsigned int num_vars;

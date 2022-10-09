@@ -99,6 +99,11 @@ GiglConfig::~GiglConfig()
 	Destruct();
 }
 
+bool GiglConfig::IsEmpty() const
+{
+	return num_funcs == 0; // num_funcs being zero is the definite indicator that the config is empty (in which case num_vars should also be zero), not num_vars being zero (in which case num_funcs may be positive)
+}
+
 void GiglConfig::Destruct()
 {
 	if (!moved)
