@@ -24,7 +24,7 @@ Setting up the Pipeline for Windows (Visual Studio)
 
 		The second command is "java -Xss6M -jar <translator executable> <preprocessed GIGL file> --skip-cpp --show-lifted-pp > <output translated file>", which executes the translator. This is mostly the same as #3 above but we are inputting the preprocessed GIGL source file explicitly. 
 
-	2. Add the GIGL source file to the Visual Studio project.
+	2. Add the GIGL source file to the Visual Studio project. The demos in this repo is created in Visual Studio 2015 (may be upgradeable to later versions), but these steps should work on different versions.
 
 	3. In Visual Studio, right click the GIGL source file in the solution explorer, and select "Properties". In the "Item Type" entry under "General" tab, select "Custom Build Tool", then click apply to refresh. In the "Custom Build Tool" tab, enter "call <the batch file from #1>" in the "Command Line" entry, enter the expected name of the translated file in the "Output" entry, and select "No" in the "Link Object" entry. This will allow the build processes in Visual Studio to first call the batch file to translate the GIGL source before doing C++ compilation (doing a re-build will always call the batch file, but a simple build will check the timestamps and only do it when necessary).
  
